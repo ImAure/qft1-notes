@@ -80,12 +80,12 @@
             Thus, we need a new framework describing states with an unspecified number of particles, which is achieved through the introduction of the \emph{Fock's space}
             \begin{equation}
                 \label{eq:Focks-space}
-                \msF \equiv \msH_1 \oplus \msH_2 \oplus \ldots \oplus \msH_n
+                \msF \equiv \msH_1 \oplus \msH_2 \oplus \dotsb \oplus \msH_n
                 \mycomma
             \end{equation}
             where $\msH_i$ is the Hilbert space describing a system of $i$ particles.
         
-        \subsection{Violation of causality}
+        \subsection{Violation of causality}\label{ss:violation-of-causality}
             Let us consider a system described by $\ket{\vb{x}} \in \msH$, the eigenstate of the position operator with eigenvalue $\vb{x}$, and let us evaluate the probability of finding the system in the eigenstate $\ket{\vb{y}}$ at time $t$:
             \begin{equation*}
                 A_{\vb{x} \to \vb{y}}\pqty{t} = \bra{\vb{y}}\! \myexp{-i \frac{\hH}{\hbar} t} \!\ket{\vb{x}}
@@ -124,7 +124,8 @@
             \end{align*}
             For the sake of simplifying the notation, let us impose the convention
             \begin{equation}
-                \hbar \equiv c \equiv 1
+                \label{eq:natural-units}
+                c \equiv \hbar \equiv 1
                 \mycomma
             \end{equation}
             known as \emph{system of natural units}, and also
@@ -162,10 +163,39 @@
 
         The answer that Quantum Field Theory proposes to this question is, unsurprisingly, that fields are more fundamental, explaining that particles emerge as excited states of their corresponding field and that vacuum corresponds to their ground state.
 
-        \subsection{Properties of theories of quantum fields}
+        \subsection{Properties of quantum field theories}
             It turns out that the theories of quantum fields have some properties that make them some solid candidates for a Theory of Everything. Let us cover the most important properties.
             \begin{enumerate}
                 \item Locality: all interactions in quantum field theories are local.
                 \item Causality: nothing can travel faster than light and the principle of causality is not violated.
-                \item Anti-particles: relativistic theories of quantum fields predict the existence of particles and anti-particles and successfully describe reactions of creationadn annihilation of particles.
+                \item Anti-particles: relativistic theories of quantum fields predict the existence of particles and anti-particles and successfully describe reactions of creation and annihilation.
+                \item All particles of the same kind are identical: the fact that a proton produced on the Earth is exactly the same as a proton produced in a \textit{Supernova} many light-years away is guaranteed by the fact that both protons are quanta of the \emph{same} field.
+                \item Correct spin-statistics relation: identical particles are indistinguishable up to a minus sign when we swap two of them. The wavefunction describing $N$ identical particles is
+                \begin{equation*}
+                    \psi = \psi\pqty{\vb{x}_1, \dotsc,\vb{x}_N}
+                    \mycomma
+                \end{equation*}
+                and it may be either symmetric or anti-symmetric, successfully describing both Bose--Einstein's and Fermi--Dirac's statistic, while these properties must be imposed by hand in standard Quantum Mechanics.
             \end{enumerate}
+            A quantum field theory is therefore good for explaining fenomena down to the fundamental level. It can describe relativistic systems and alos non-relativistic systems with a large number of particles, which is of interest for condensed matter physics.
+    \section{Units and scales}
+        In \Sref{ss:violation-of-causality} we used natural units \eqref{eq:natural-units} to simplify the notation. Let us briefly comment the consequences of this choice. In nature we usually have to deal with three fundamental units:
+        \begin{enumerate}
+            \item[$c$:] the speed of light in vacuum;
+            \item[$\hbar$:] the reduced Planck constant;
+            \item[$G$:] Newton's gravitational constant;
+        \end{enumerate}
+        and in SI units thei are measured in
+        \begin{align*}
+            \bqty{c} &= \unit{\LENGTH\per\TIME}
+            \mycomma\\
+            \bqty{\hbar} &= \unit{\MASS\LENGTH\squared\per\TIME}
+            \mycomma\\
+            \bqty{G} &= \unit{\LENGTH\cubed\per\MASS\per\TIME\squared}
+            \myperiod
+        \end{align*}
+        When we work with $c = \hbar = 1$, from $c = 1$ we get $\unit{\LENGTH} = \unit{\TIME}$ and by substituting in $\hbar = 1$ we find that $\unit{\MASS} = \unit{\per\TIME}$.
+
+        Since only one of the units is independent, we shall express \unit{\LENGTH} and \unit{\TIME} as \unit{\per\MASS}. From this we see that $\bqty{G} = \unit{\per\MASS\squared}$.
+
+        We may also define some new fundamental quantities like the Planck mass and the Planck length, which serve
