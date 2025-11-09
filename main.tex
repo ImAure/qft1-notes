@@ -4,11 +4,12 @@
 
 \begin{document}
     \input{src/contents/frontbackmatter/titlepage}
-    \pagestyle{book}
+    \pagestyle{book-style}
 
     \frontmatter
         \tableofcontents
     \mainmatter
+        \input{src/contents/mainmatter/chap1.tex}
         \appendix
     \backmatter
         \printbibliography

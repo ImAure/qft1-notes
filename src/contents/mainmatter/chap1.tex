@@ -1,0 +1,171 @@
+\chapter{Introduction}
+    \section{Relativistic Quantum Mechanics}
+        Nature is described by Quantum Mechanics at short discances and by Special Relativity at large velocities. However, Quantum Mechanics does not take the relativistic effects into account: we usually deal with Hamiltonians with a kynetic term that looks like
+        \begin{equation}
+            \label{eq:Hamiltonian-p2-2m}
+            \hH = \frac{\hvp^2}{2m}
+        \end{equation}
+        while the expression for energy in Special relativity is given by 
+        \begin{equation}
+            \label{eq:relativistic-energy-sqrt}
+            E = \sqrt{\vb{p}^2 c^2 + m^2 c^4}
+            \myperiod
+        \end{equation}
+        Moreover, non-relativistic Quantum Mechanics does not inclue any upper limit on velocities, meaning that particles would be allowed to go faster than light.
+
+        On the other hand, Special Relativity does not include quantum effects, the physical state is not described by a vector in the Hilbert Space, observable physical quantities are not operators and energy is not quantized.
+
+        We may make an attempt at building a relativistc quantum theory by using the same mathematical framework of Quantum Mechanics but by expressing the Hamiltonian operator via the relativistic expression of the energy \eqref{eq:relativistic-energy-sqrt}, obtaining something that looks like
+        \begin{equation}
+            \label{eq:relativistic-Hamiltonian}
+            \hH = \sqrt{\hvp^2 c^2 + m^2 c^4}
+            \myperiod
+        \end{equation}
+        In this formalism we promote the time coordinate to an operator \htt\ and require that both space and time operators satisfy the canonical commutation relations:
+        \begin{align}
+            \bigl[\hx, \hp \bigr] &= i\hbar
+            \mycomma\\
+            \bigl[\htt, \hH \bigr] &= i\hbar
+            \myperiod
+        \end{align}
+        Through this formalism we can describe a physical system wita a fixed number of particles as a vector in the Hilbert space \msH. Eigenstates of operators form a complete set in \msH\ and their eigenvalues prived exact values for observables.
+
+        For symmetry reasons we assume \hp\ and \htt\ to act in the same way, forcing a minus sign in front of the time derivative:
+        \begin{align}
+            \hp &\equiv -i\hbar \pdv{x}
+            \mycomma\\
+            \hH &\equiv -i\hbar \pdv{t}
+            \myperiod
+        \end{align}
+        We can then write the generalized Schr\"odinger Equation as
+        \begin{equation}
+            -i \hbar \pdv{\psi}{t} = \sqrt{\hvp^2 c^2 + m^2 c^4}\psi
+            \mycomma
+        \end{equation}
+        which is not actually well defined since the differential operator \hvp\ appears under a square root.
+
+        This approach also fails for two main reasons:
+        \begin{enumerate}
+            \item In high energy physics, where relativistic effects are involved, particle collisions can destroy and create new particles, meaning that the number of particles is not conserved;
+            \item There are inconistencies like the violation of causality and the existence of an infinite ``tower'' of negative energy states.
+        \end{enumerate}
+        
+        \subsection{Number of particles and Fock's space}
+            An Hilbert space \msH\ which describes a physical system with a fixed amount of particles is incomplete, since some processes can result in the creation or the destruction of particles---think of radioactive decays or particle--anti-particle annihilations.\footnote{Moreover, anti-particles were first successfully described by Dirac's theory of relativistic Quantum Mechanics.} 
+
+            Let us show a concrete example. Consider a single particle of mass $m$ confined in a cubic box of size $\Delta x \simeq L$. From Heisenberg's uncertainty principle, $\Delta x \Delta p \gtrsim \hbar$, we easily get
+            \begin{equation*}
+                \Delta p \gtrsim \frac{\hbar}{L}
+                \myperiod
+            \end{equation*}
+            At the same time, from the mass shell condition in the ultra-relativistic limit,\footnote{This means as $\abs{\vb{p}}\to\infty$ while $m$ remains fixed.} $E^2 = \vb{p}^2 c^2 + m^2 c^4 \simeq \vb{p}^2 c^2$, we find
+            \begin{equation*}
+                \Delta p \simeq \frac{\Delta E}{c}
+                \myperiod
+            \end{equation*}
+            By combining the two conditions we find
+            \begin{equation}
+                \Delta E \gtrsim \frac{c\hbar}{L}
+                \mycomma
+            \end{equation}
+            meaning that the uncertainty on the energy grows more and more as the box shrinks.
+
+            We know from experimental evidence that when $E > 2 m c^2$ a particle--anti-particle pair can pop into existence, which implies that the number of particles may not be conserved when the distances involved become small enough. The scale of this phenomenon is dictated by the quantity
+            \begin{equation*}
+                L \simeq \frac{\hbar}{m c} \equiv \lambda_c 
+                \mycomma
+            \end{equation*}
+            commonly known as the \emph{Compton wavelength} of a particle of mass $m$. At distances smaller than $\lambda_c$ there is a high propability of observing the creation of a particle and an anti-particle similar to the one we were observing in the first place. However as we said earlier, the Hilbert space \msH\ only contains the states associated to the fixed initial amount of particle.
+
+            Thus, we need a new framework describing states with an unspecified number of particles, which is achieved through the introduction of the \emph{Fock's space}
+            \begin{equation}
+                \label{eq:Focks-space}
+                \msF \equiv \msH_1 \oplus \msH_2 \oplus \ldots \oplus \msH_n
+                \mycomma
+            \end{equation}
+            where $\msH_i$ is the Hilbert space describing a system of $i$ particles.
+        
+        \subsection{Violation of causality}
+            Let us consider a system described by $\ket{\vb{x}} \in \msH$, the eigenstate of the position operator with eigenvalue $\vb{x}$, and let us evaluate the probability of finding the system in the eigenstate $\ket{\vb{y}}$ at time $t$:
+            \begin{equation*}
+                A_{\vb{x} \to \vb{y}}\pqty{t} = \bra{\vb{y}}\! \myexp{-i \frac{\hH}{\hbar} t} \!\ket{\vb{x}}
+                \myperiod
+            \end{equation*}
+            In standard Quantum Mechanics we would then write
+            \begin{align*}
+                A_{\vb{x} \to \vb{y}}\pqty{t} 
+                &= \bra{\vb{y}}\! \myexp{-\frac{i}{\hbar} \frac{\hvp^2}{2m} t} \!\ket{\vb{x}} \\
+                &= \int\nolimits \frac{\dd[3]{\vb{p}}}{\pqty{2 \pi \hbar}^3} \bra{\vb{y}}\! \myexp{-\frac{i}{\hbar} \frac{\hvp^2}{2m} t} \!\ket{\vb{p}}\! \!\bra{\vb{p}}\ket{\vb{x}} \\
+                &= \int\nolimits \frac{\dd[3]{\vb{p}}}{\pqty{2 \pi \hbar}^3} \myexp{-\frac{i}{\hbar}\frac{\vb{p}^2}{2m}} \myexp{-i\frac{\vb{p} \cdot \vb{x}}{\hbar}} \bra{\vb{y}}\ket{\vb{p}} \\
+                &= \int\nolimits \frac{\dd[3]{\vb{p}}}{\pqty{2 \pi \hbar}^3} \myexp{-\frac{i}{\hbar} \bigl[\frac{\vb{p^2}}{2m} + \vb{p} \cdot \pqty{\vb{x} - \vb{y}}\bigr]}
+                \mycomma
+            \end{align*}
+            where we used $f\pqty{\hvp} \!\ket{\vb{p}} = f\pqty{\vb{p}} \!\ket{\vb{p}}$ and $\braket{\vb{x}}{\vb{p}} = \myexp{i \frac{\vb{x} \cdot \vb{p}}{\hbar}}$. This is the renowned Gaussian integral, which evaluates to
+            \begin{equation}
+                \int_{-\infty}^{+\infty} \dd{x} \myexp{-a x^2 + b x} = \sqrt{\frac{\pi}{a}} \myexp{\frac{b^2}{4a}}
+                \mycomma
+            \end{equation}
+            giving
+            \begin{equation*}
+                A_{\vb{x} \to \vb{y}}\pqty{t}
+                = \pqty{\frac{m}{2 \pi i \hbar t}}^{\frac{3}{2}} \myexp{\frac{i m}{2 \hbar t} \pqty{\vb{y} - \vb{x}}^2}
+                > 0
+                \myperiod
+            \end{equation*}
+            This means that the probability of finding the particle at a distance $\abs{\vb{y} - \vb{x}}$ is non-zero at any point in space and time, even in the case in which the relative position vector $\vb{y} - \vb{x}$ crosses the boundary of the light cone. This is actually okay in the non-relativistic theory, as no limits are imposed on the velocity.
+
+            Let us now evaluate the same integral by using the relativistic expression for the Hamiltonian \eqref{eq:relativistic-Hamiltonian}, with similar passages:
+            \begin{align*}
+                A_{\vb{x} \to \vb{y}}\pqty{t}
+                &= \bra{\vb{y}}\! \myexp{-\frac{it}{\hbar} \sqrt{\hvp^2 c^2 + m^2 c^4}} \!\ket{\vb{x}} \\
+                &= \int\nolimits \frac{\dd[3]{\vb{p}}}{\pqty{2 \pi \hbar}^3} \bra{\vb{y}}\! \myexp{-\frac{it}{\hbar} \sqrt{\hvp^2 c^2 + m^2 c^4}} \!\ket{\vb{p}}\! \!\bra{\vb{p}}\ket{\vb{x}} \\
+                &= \int\nolimits \frac{\dd[3]{\vb{p}}}{\pqty{2 \pi \hbar}^3} \myexp{-\frac{it}{\hbar} \sqrt{\vb{p}^2 c^2 + m^2 c^4}} \myexp{\frac{i}{\hbar} \pqty{\vb{y} - \vb{x}}}
+                \myperiod
+            \end{align*}
+            For the sake of simplifying the notation, let us impose the convention
+            \begin{equation}
+                \hbar \equiv c \equiv 1
+                \mycomma
+            \end{equation}
+            known as \emph{system of natural units}, and also
+            \begin{equation*}
+                \omega_{\vb{p}} = \sqrt{\vb{p}^2 c^2 + m^2 c^4} \equiv \sqrt{\vb{p}^2 + m^2}\qcomma \vb{r} = \vb{y} - \vb{x}
+                \myperiod
+            \end{equation*}
+            We can now write
+            \begin{align*}
+                A_{\vb{x} \to \vb{y}}\pqty{t}
+                &= \int\nolimits \frac{\dd[3]{\vb{p}}}{\pqty{2 \pi}^3} \myexp{i \pqty{\vb{p} \cdot \vb{r} - \omega_{\vb{p}}t}} \\
+                &= \frac{1}{\pqty{2\pi}^3}\int_{0}^{+\infty} p^2\dd{p} \int_{-1}^{+1} \dd{\cos\!\vartheta} \int_{0}^{2\pi} \dd{\varphi} \myexp{i\pqty{p r \cos\!\vartheta - \omega_{\vb{p}}t}} \\
+                &= \frac{1}{\pqty{2 \pi}^2} \int_{0}^{+\infty} \myexp{-i\omega_{\vb{p}}t} p^2 \dd{p} \int_{-1}^{+1} \myexp{p r \cos\!\vartheta} \dd{\cos\!\vartheta} \\
+                &= -\frac{i}{\pqty{2 \pi}^2 r} \int_{0}^{+\infty} \pqty{\myexp{i p r} - \myexp{-i p r}} \myexp{-i\omega_{\vb{p}}t} p \dd{p}
+                \myperiod
+            \end{align*}
+            This integral can be solved exactly by exploiting the properties of Bessel functions, which is a complicated procedure. We can however give an estimate of the result through the help of complex analysis.
+            \begin{center}
+                \emph{Complex magic goes here...}
+            \end{center}
+            As a final result we get
+            \begin{equation}
+                \label{eq:exponential-estimate}
+                0 \leq \abs{A_{\vb{x} \to \vb{y}}} < \frac{1}{2 \pi^2 r} \frac{m \pqty{r - t} + 1}{\pqty{r - t}^2} \myexp{-m\pqty{r - t}}
+                \myperiod
+            \end{equation}
+            While this means that the probabilty of finding the particle outside of the light cone---where $r \gg t$---decays exponentially, it could still be non-zero.
+
+    \section{The introduction of fields}
+        The only hope we have left relies on a complete change of paradigm, leaving the ``classical'' Quantum Mechanics behind, in favour to a more modern and advanced Quantum Field Theory.
+
+        There are many examples of field theories appearing in classical physics, some examples being the electromagnetic and the gravitational fields. These fields were originally introduced as a solution to the problem of the ``action at a distance'' induced by Coulomb's law for electrostatics and Newton's law of gravitation, in order to preserve the locality of interactions.
+
+        We have then learned to describe photons as \emph{quanta} of excitation of the electromagnetic field, meaning that the field is some sort of fundamental quantity and its quanta are one expression of the existence of the field. On the other hand we know that some particles like the electron carry some fundamental quantities themselves, even in the absence of an evident ``electron field''. So what is more fundamental? The field describing a particle or the particle itself?
+
+        The answer that Quantum Field Theory proposes to this question is, unsurprisingly, that fields are more fundamental, explaining that particles emerge as excited states of their corresponding field and that vacuum corresponds to their ground state.
+
+        \subsection{Properties of theories of quantum fields}
+            It turns out that the theories of quantum fields have some properties that make them some solid candidates for a Theory of Everything. Let us cover the most important properties.
+            \begin{enumerate}
+                \item Locality: all interactions in quantum field theories are local.
+                \item Causality: nothing can travel faster than light and the principle of causality is not violated.
+                \item Anti-particles: relativistic theories of quantum fields predict the existence of particles and anti-particles and successfully describe reactions of creationadn annihilation of particles.
+            \end{enumerate}
