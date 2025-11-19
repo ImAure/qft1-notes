@@ -185,7 +185,7 @@
             \item[$\hbar$:] the reduced Planck constant;
             \item[$G$:] Newton's gravitational constant;
         \end{enumerate}
-        and in SI units thei are measured in
+        and in SI units they are measured in
         \begin{align*}
             \bqty{c} &= \unit{\LENGTH\per\TIME}
             \mycomma\\
@@ -198,4 +198,64 @@
 
         Since only one of the units is independent, we shall express \unit{\LENGTH} and \unit{\TIME} as \unit{\per\MASS}. From this we see that $\bqty{G} = \unit{\per\MASS\squared}$.
 
-        We may also define some new fundamental quantities like the Planck mass and the Planck length, which serve
+        We may also define some new fundamental quantities like the Planck mass and the Planck length, which we don't really care about right now but you can check professor Cicoli's hand-written notes for more details.
+    \section{Mechanical model of a quantum field}
+        Let us gain some intuition and the main ideas from a mechanical model of a field. Consider an elastic string, which is the continuum limit of a one dimensional lattice of $N$ atoms. Let it be a metastable system, \latinie, a system which does not change drastically if we apply a small perturbing force,\footnote{\latinNb: all the system we can observe in nature are metastable, otherwise they would quickly evolve away towards equilibrium.} with a restoring force which brings the system back to a state where the force vanishes.
+
+        For a small dispacement $\var{x}$, with respect to the equilibrium point $x_0$, the force can be expanded as
+        \begin{equation*}
+            F\pqty{x_0 + \var{x}} = F\pqty{x_0} + \dv{F}{x}\eval_{x_0}\var{x}  + \dotsb
+        \end{equation*}
+        and by setting $F\pqty{x_0 = 0} = 0$ and $\dv*{F}{x}\eval_{0} = -\abs{k}$ we may express the force as
+        \begin{equation*}
+            F\pqty{x} = -\abs{k} x
+            \myperiod
+        \end{equation*}
+        We therefore see that any metastable system may be describe at first order as a simple harmonic oscillator. Each of the $N$ components of the lattice has the same mass $m$ and they are coupled via springs with the same elastic constant $k$ and separated by a distance of $\Delta x$; the interaction is \emph{local} in the sense that each atom only interacts with its nearest neighbours. From classical mechanics we know we can describe the system by determining the functions $y_i\pqty{t}$ that describe the displacement of the $i$-th atom along the $y$ axis. We see that as $Delta x\to 0$ and $N \to \infty$, the functions $y_i\pqty{t}$ approach the function $\phi\pqty{x,t}$ as the discrete index $i$ becomes the continuous variabe $x$.
+
+        This function $\phi$ can be thought of as a field, where the dependency on $x$ can be interpreted as a continuous label for infinitely many harmonic oscillators. This formalism lets us describe systems with an infinite number of degrees of freedom.
+
+        Assuming that the lattice iss periodic for $i = i + N$, the Lagrangian of the system is
+        \begin{equation}
+            L = \sum_{i=1}^{N} \bqty{\frac{1}{2} m \dot{y}_i^2\pqty{t} - \frac{1}{2} k \pqty{\frac{y_i\pqty{t} - y_{i+1}\pqty{t}}{\Delta x}}^2}
+            \mycomma
+        \end{equation}
+        with $y_i\pqty{t} - y_{i+1}\pqty{t} \ll \Delta x$. Notice that $k$ has the same dimensions of $L$, an energy: if we define $k = mv^2$ we may write
+        \begin{equation*}
+            L = \frac{1}{2} m \sum_{i=1}^{N} \bqty{\dot{y}_i^2 - v^2 \pqty{\frac{y_i - y_{i+1}}{\Delta x}}^2}
+            \mycomma
+        \end{equation*}
+        where the terms in brackets represent the kynetic energy and the potential energy due to nearest neighbour interactions.
+
+        We can write the Euler--Lagrange equations of motion obtained from extremising the action\footnote{Qui sarebbe carino mettere nel margine in scriptsize il principio di Hamilton $\var{S} = 0\iff\txt{eq. di Lagrange}$.}
+        \begin{equation}
+            \lagrangeeq{L}{y_i}{\dot{y}_i} = 0
+            \mycomma
+        \end{equation}
+        which become
+        \begin{equation}
+            \label{eq:euler-lagrange-for-chain}
+            \ddot{y}_{i}\pqty{t} = -v^{2} \pqty{\frac{2 y_{i}\pqty{t} - y_{i+1} - y_{i-1}}{\Delta x^2}}
+            \mycomma
+        \end{equation}
+        where we can clearly see that the $i$-th harmonic oscillator is coupled with the $\pqty{i+1}$-th and with the $\pqty{i-1}$-th oscillator.
+
+        We can decouple the harmonic oscillators by diagonalizing the potential through a change of basis. Since $y_i$ must be periodic in $i$ so that $y_i\pqty{t} = y_{i+N}\pqty{t}$ we may use the discrete Fourier transform:
+        \begin{equation}
+            \label{eq:discrete-fourier}
+            y_{j}\pqty{t} = \frac{1}{\sqrt{N}} \sum_{k=1}^N \myexp{i \frac{2 \pi}{N}jk} \tilde{y}_k\pqty{t}
+            \myperiod
+        \end{equation}
+        From this position follow the equations of motion in the new coordinates. By substituting \eqref{eq:discorete-fourier} in \eqref{eq:euler-lagrange-for-chain} we get:
+        % \begin{align*}
+        %     \frac{1}{\sqrt{N}} \sum_{j=1}^{N} \myexp{i\frac{2 \pi}{N} &= -\pqty{\frac{v}{\Delta x         \end{align*}
+% 
+% 
+
+
+
+
+
+
+
+
