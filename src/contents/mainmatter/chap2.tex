@@ -78,7 +78,7 @@
         This formalism will be useful later when we quantise the fields by promoting \msH, $\tensor{\pi}{_i}$ and $\tensor{\phi}{^i}$ to operators, expressing them in terms of \emph{creation} and \emph{annihilation} operators, \hvcreation{p}\ and \hvdestruction{p}.
 
     \section{Noether's theorem}
-        Symmetries are fundamental both in Classical and in Quantum Field Theory as Noether's theorem binds each symmetry to a conserved current. There exist many different kinds of symmetries, \emph{discrete} and \emph{continuous}, \emph{global} and \emph{local}, and \emph{external} and \emph{internal}. External symmetries are symmetries under changes of reference frame or more general space-time transformations, while internal symmetries are not related with the environment but rather with internal degrees of freedom like spin or a phase in the function that describes the system. Global symmetries are the ones that emerge under trasformations that are independent on space-time coordinates, as opposed to local or \emph{gauge} transformations that depend on the point in space and time. Finally, continuous symmetries depend on parameters that may vary smoothly in some interval while the parameters of discrete symmetries are bound to countable set, whether they are finite or infinite. Some  of the most common examples are:
+        Symmetries are fundamental both in Classical and in Quantum Field Theory as Noether's\footnote{One may be tempted to write \emph{N\"other} instead of \emph{Noether}, however the latter spelling is the correct one. This surname was allegedly wrongfully recorded as Noether at some point in Emmy's family tree and this is therefore the legally correct spelling.} theorem binds each symmetry to a conserved current. There exist many different kinds of symmetries, \emph{discrete} and \emph{continuous}, \emph{global} and \emph{local}, and \emph{external} and \emph{internal}. External symmetries are symmetries under changes of reference frame or more general space-time transformations, while internal symmetries are not related with the environment but rather with internal degrees of freedom like spin or a phase in the function that describes the system. Global symmetries are the ones that emerge under trasformations that are independent on space-time coordinates, as opposed to local or \emph{gauge} transformations that depend on the point in space and time. Finally, continuous symmetries depend on parameters that may vary smoothly in some interval while the parameters of discrete symmetries are bound to countable set, whether they are finite or infinite. Some  of the most common examples are:
         \begin{enumerate}[label=\mybullet]
             \item \emph{Lorentz transformations} are continuous, global, external transformations;
             \item \emph{General coordinate transformations} from General Relativity are continuous, local, external transformations;
@@ -86,3 +86,82 @@
             \item \emph{Parity} and \emph{Time reversal} are discrete, global, external transformations;
             \item \emph{Charge conjugation} is a discrete, global, internal transformation.
         \end{enumerate}
+
+        We shall now recast Noether's theorem in powerful and general form, in the language of Field Theory. The theorem states as follows.
+
+        \vspace{\baselineskip}
+        {
+            \noindent\textbf{Theorem (Noether).}\itshape\ Every continuous symmetry of the action \mcS\ gives rise to a conserved current \tJ{^\mu}, such that
+            \begin{equation}
+                \label{eq:Noether-1}
+                \tpdv{_\mu}\tJ{^\mu} = 0
+                \myperiod
+            \end{equation}
+            Every conserved current gives rise to a conserved charge $Q$ defined as
+            \begin{equation}
+                \label{eq:Noether-2}
+                Q = \int\nolimits_{\bbR^3} \tJ{^0} \dd[3]{\vb{x}}
+                \myperiod
+            \end{equation}
+        }
+        \noindent\textit{Proof.} Let us first assume \eqref{eq:Noether-1} to be true to quickly prove \eqref{eq:Noether-2}. Equation \eqref{eq:Noether-1} can be written in components as 
+        \begin{equation*}
+            \pdv{\tJ{^0}}{t} + \div{\vb{J}} = 0
+            \mycomma
+        \end{equation*}
+        where $\vb{J}$ is the spacial component of the $4$-current $\tJ{^\mu} = \pqty{\tJ{^0}, \vb{J}}$. By integrating both sides of the equation over a finite volume $\Omega \subseteq \bbR^3$, we see the volume integral of the divergence of the vector field $\vb{J}$, which may be translated to the flux of the field itself through the boundary $\partial\Omega$ of the region due to Gauss' theorem:
+        \begin{align*}
+            \int\nolimits_{\Omega} \pdv{\tJ{^0}}{t} \dd[3]{\vb{r}}
+            &= \int\nolimits_{\Omega} \div{\vb{J}} \dd[3]{\vb{x}} \\
+            &= \oint\nolimits_{\partial\Omega} {\vb{J}}\dotproduct\vu{n} \dd{\sigma}
+            \myperiod
+        \end{align*}
+        \tJ{^\mu} must be a regular function of the field, therefore, if we assume that the field and all of its functions vanish at infinity, as we usually do with real systems that cannot hold infinite energy, we see that by taking the limit as $\Omega\to\bbR^3$, the flux goes to zero. Since \tJ{^\mu} is regular, we may as well bring the derivative out of the integral, obtaining
+        \begin{equation*}
+            \dv{t} \int\nolimits_{\bbR^3} \tJ{^0} \dd[3]{\vb{x}}
+            = \oint\nolimits_{\partial\bbR^3} \vb{J}\dotproduct\vu{n} \dd{\sigma}
+            = 0
+            \myperiod
+        \end{equation*}
+        By recognizing the definition of $Q$ we easily get
+        \begin{equation*}
+            \dv{Q}{t} = 0
+            \myperiod
+        \end{equation*}
+
+        Let us now prove the existence of the conserved current by considering an arbitrary infinitesimal transformation of the coordinates
+        \begin{equation*}
+            \phi_i \to \phi' = \phi_i + \var{\phi_i}
+            \mycomma
+        \end{equation*}
+        such that
+        \begin{equation*}
+            \msL \to \msL' = \msL + \var{\msL}
+            \myperiod
+        \end{equation*}
+        We may evaluate the variation of the Lagrangian as
+        \begin{align*}
+            \var{\msL}
+            &= \pdv{\msL}{\phi_i} \var{\phi_i} + \pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\pqty{\tpdv{_\mu}\phi_i}} \\
+            &= \pdv{\msL}{\phi_i} \var{\phi_i} + \pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \tpdv{_\mu}\pqty{\var{\phi_i}} \\
+            &= \pqty{\pdv{\msL}{\phi_i} - \tpdv{_\mu}\pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}}} \var{\phi_i} + \tpdv{_\mu}\pqty{\pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i}}
+            \mycomma
+        \end{align*}
+        where we exploited the usual trick of integrating by part. We see that when we evaluate $\var{\msL}$ on the trajectories $\phi_i\pqty{x}$ that satisfy the Euler--Lagrange equations, the first term of the sum simplifies to zero, hence
+        \begin{equation*}
+            \var{\msL} = \pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i}
+            \myperiod
+        \end{equation*}
+        It is now time to exploit the hypothesis that the transformarion $\phi_i \to \phi_i'$ is a simmetry for the actions \mcS.
+        
+        moreover the second term of the sum may be interpreted as the $4$-divergence of a function $\tK{^\mu}$ defined as
+        \begin{equation*}
+            \tK{^\mu} = \pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i}
+            \mycomma
+        \end{equation*}
+        therefore
+        \begin{equation*}
+            \var{\msL} = \tpdv{_\mu}\tK{^\mu}
+            \myperiod
+        \end{equation*}
+        We may now evaluate
