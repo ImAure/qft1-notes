@@ -56,7 +56,7 @@
                 \begin{figure}[htbp]
             \centering
             \input{src/assets/figures/field-evolution}
-            \caption{A solution to the Euler--Lagrange equations describes the evolution of the field through space and time. In this graph $x$ is not the $4$-vector $\pqty{t, \vb{x}}$ but rather the first spacial component in $\tensor{x}{^\mu} = \pqty{t, x, y, z}$.}
+            \caption{A solution to the Euler--Lagrange equations describes the evolution of the field through space and time. In this graph $x$ is not the $4$-vector $\pqty{t, \vb{x}}$ but rather the first spatial component in $\tensor{x}{^\mu} = \pqty{t, x, y, z}$.}
         \end{figure}
         
         It is important to notice that while the solution $\phi_i\pqty{x}$ may be the solution to a wave equation---\latineg\ when equations \eqref{eq:Euler-Lagrange-fields} take the form of the d'Alembert equation---the field is not a quantum wave-function itself! The function $\phi_i\pqty{x}$ describes the dynamical evolution, \latinie\ the \emph{trajectory}, of the field in space and time and is not, in any way, interpretable as a probability distribution. The wave-function as a probability distribution only comes into the picture when we consider the quantum state associated to the field in the Fock space---in this case the solution of the appropriate wave equation describes the evolution of this state in the Fock space---and evaluate its projection on the eigenstates of the position operator.
@@ -109,7 +109,7 @@
             \pdv{\tJ{^0}}{t} + \div{\vb{J}} = 0
             \mycomma
         \end{equation*}
-        where $\vb{J}$ is the spacial component of the $4$-current $\tJ{^\mu} = \pqty{\tJ{^0}, \vb{J}}$. By integrating both sides of the equation over a finite volume $\Omega \subseteq \bbR^3$, we see the volume integral of the divergence of the vector field $\vb{J}$, which may be translated to the flux of the field itself through the boundary $\partial\Omega$ of the region due to Gauss' theorem:
+        where $\vb{J}$ is the spatial component of the $4$-current $\tJ{^\mu} = \pqty{\tJ{^0}, \vb{J}}$. By integrating both sides of the equation over a finite volume $\Omega \subseteq \bbR^3$, we see the volume integral of the divergence of the vector field $\vb{J}$, which may be translated to the flux of the field itself through the boundary $\partial\Omega$ of the region due to Gauss' theorem:
         \begin{align*}
             \int\nolimits_{\Omega} \pdv{\tJ{^0}}{t} \dd[3]{\vb{r}}
             &= \int\nolimits_{\Omega} \div{\vb{J}} \dd[3]{\vb{x}} \\
