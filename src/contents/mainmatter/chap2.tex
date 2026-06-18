@@ -2,7 +2,13 @@
     Before we talk about Quantum Field Theory, let us develop the mathematical framework of Classical Field Theory, as we need to define classical fields first and then quantise them to obtain a quantum theory.
 
     \section{Euler--Lagrange equations for fields}
-        In Classical Mechanics we work with a finite number or degrees of freedom $q_i\pqty{t}$ corresponding to the number of generalised coordinates in the configuration space. A \emph{field}, on the other hand, is a quantity defined at every point $x = \pqty{t, \vb{x}}$ in space-time. The field is the analogous of $q_i$ and is denoted as $\phi_i = \phi_i\pqty{x}$, where $i$ denotes different components of the same vector field or different independent scalar fields. It is important do understand that while position\footnote{Or rather the generalised position.} $q_i$ is a variable, in Field Theory the position $x$ is just a label and the function $\phi_i\pqty{x}$ is the actual variable with infinite degrees of freedom. This means that the Lagrangian $\mcL$ shall not be defined as a function of $x\pqty{t}$ and $\dot{x}\pqty{t}$ but rather as a function of $\phi_i\pqty{x}$ and $\tpdv{_\mu}\phi_i\pqty{x}$. Since $q_i$ is a function of time only, the Lagrangian is a function of the total derivative of $q_i$ with respect to $t$. In the place of the time derivative, we find the $4$-gradient of $\phi_i$:
+        In Classical Mechanics we work with a finite number or degrees of freedom $q_i\pqty{t}$ corresponding to the number of generalised coordinates in the configuration space
+        A \emph{field}, on the other hand, is a quantity defined at every point $x = \pqty{t, \vb{x}}$ in space-time.
+        The field is the analogous of $q_i$ and is denoted as $\phi_i = \phi_i\pqty{x}$, where $i$ denotes different components of the same vector field or different independent scalar fields.
+        It is important do understand that while position\footnote{Or rather the generalised position.} $q_i$ is a variable, in Field Theory the position $x$ is just a label and the function $\phi_i\pqty{x}$ is the actual variable with infinite degrees of freedom.
+        This means that the Lagrangian $\mcL$ shall not be defined as a function of $x\pqty{t}$ and $\dot{x}\pqty{t}$ but rather as a function of $\phi_i\pqty{x}$ and $\tpdv{_\mu}\phi_i\pqty{x}$.
+        Since $q_i$ is a function of time only, the Lagrangian is a function of the total derivative of $q_i$ with respect to $t$.
+        In the place of the time derivative, we find the $4$-gradient of $\phi_i$:
         \begin{equation}
             \mcL = \mcL\pqty{\phi_i,\tpdv{_\mu}\phi_i}
             \myperiod
@@ -23,7 +29,9 @@
             \mcS\bqty{\phi_i} = \int \msL\pqty{\phi_i\pqty{x}, \tpdv{_\mu}\phi_i\pqty{x}} \dd[4]{x}
             \myperiod
         \end{equation}
-        We should briefly note that in natural units \mcL\ has mass dimension $1$ and \msL\ has mass dimension $4$, since $\bqty{\dd[4]x} = -4$. Moreover $\bqty{\tpdv{_\mu}} = +1$, while the mass dimension of $\phi_i$ and any coupling constants will depend on the theory. Finally, $\bqty{\mcS} = 0$, meaning that the action is a pure scalar quantity.
+        We should briefly note that in natural units \mcL\ has mass dimension $1$ and \msL\ has mass dimension $4$, since $\bqty{\dd[4]x} = -4$.
+        Moreover $\bqty{\tpdv{_\mu}} = +1$, while the mass dimension of $\phi_i$ and any coupling constants will depend on the theory.
+        Finally, $\bqty{\mcS} = 0$, meaning that the action is a pure scalar quantity.
 
         By requiring that the action be stationary on the physical trajectories of fields, \latinie\ $\var\mcS = 0$, we find the expression of the Euler--Lagrange equations for fields.
 
@@ -41,7 +49,8 @@
             + \int \tpdv{_\mu}\pqty{\pdv{\msL}{\pqty{\tpdv{_\mu}{\phi_i}}} \var{\phi_i}} \dd[4]{x}
             \mycomma
         \end{align*}
-        where the second integral vanishes, assuming that $\var{\phi_i} = 0$ at the boundaries of the domain of integration. We finally get
+        where the second integral vanishes, assuming that $\var{\phi_i} = 0$ at the boundaries of the domain of integration.
+        We finally get
         \begin{equation*}
             \var{\mcS\bqty{\phi_i}}
             = \int \pqty{\pdv{\msL}{\phi_i} - \tpdv{_\mu}\pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}}} \var{\phi_i} \dd[4]{x}
@@ -59,7 +68,8 @@
             \caption{A solution to the Euler--Lagrange equations describes the evolution of the field through space and time. In this graph $x$ is not the $4$-vector $\pqty{t, \vb{x}}$ but rather the first spatial component in $\tensor{x}{^\mu} = \pqty{t, x, y, z}$.}
         \end{figure}
         
-        It is important to notice that while the solution $\phi_i\pqty{x}$ may be the solution to a wave equation---\latineg\ when equations \eqref{eq:Euler-Lagrange-fields} take the form of the d'Alembert equation---the field is not a quantum wave-function itself! The function $\phi_i\pqty{x}$ describes the dynamical evolution, \latinie\ the \emph{trajectory}, of the field in space and time and is not, in any way, interpretable as a probability distribution. The wave-function as a probability distribution only comes into the picture when we consider the quantum state associated to the field in the Fock space---in this case the solution of the appropriate wave equation describes the evolution of this state in the Fock space---and evaluate its projection on the eigenstates of the position operator.
+        It is important to notice that while the solution $\phi_i\pqty{x}$ may be the solution to a wave equation---\latineg\ when equations \eqref{eq:Euler-Lagrange-fields} take the form of the d'Alembert equation---the field is not a quantum wave-function itself! The function $\phi_i\pqty{x}$ describes the dynamical evolution, \latinie\ the \emph{trajectory}, of the field in space and time and is not, in any way, interpretable as a probability distribution.
+        The wave-function as a probability distribution only comes into the picture when we consider the quantum state associated to the field in the Fock space---in this case the solution of the appropriate wave equation describes the evolution of this state in the Fock space---and evaluate its projection on the eigenstates of the position operator.
 
     \section{Hamiltonian formalism}
         In order to build our quantum theory, we need to develop a Hamiltonian theory first, so that we may promote fields and their conjugate momenta to operators defined through some canonical commutation relations.
@@ -69,7 +79,8 @@
             \tensor{\pi}{_i} = \pdv{\msL}{\tensor{\dot{\phi}}{^i}}
             \mycomma
         \end{equation}
-        where $\tensor{\dot{\phi}}{^i}$ denotes the time derivative of $\tensor{\phi}{^i}$. We then define the \emph{Hamiltonian density} as the Legendre transform of the Lagrangian density
+        where $\tensor{\dot{\phi}}{^i}$ denotes the time derivative of $\tensor{\phi}{^i}$.
+        We then define the \emph{Hamiltonian density} as the Legendre transform of the Lagrangian density
         \begin{equation}
             \msH\pqty{\tensor{\phi}{^i}, \tensor{\pi}{_i}} = \tensor{\pi}{_k} \tensor{\dot{\phi}}{^k}\pqty{\tensor{\pi}{_i}} - \msL\bigl( \tensor{\phi}{^i}, \tensor{\dot{\phi}}{^i}\pqty{\tensor{\pi}{_k}}\bigr)
             \myperiod
@@ -78,7 +89,11 @@
         This formalism will be useful later when we quantise the fields by promoting \msH, $\tensor{\pi}{_i}$ and $\tensor{\phi}{^i}$ to operators, expressing them in terms of \emph{creation} and \emph{annihilation} operators, \hvcreation{p}\ and \hvdestruction{p}.
 
     \section{Noether's theorem}
-        Symmetries are fundamental both in Classical and in Quantum Field Theory as Noether's\footnote{One may be tempted to write \emph{N\"other} instead of \emph{Noether}, however the latter spelling is the correct one. This surname was allegedly wrongfully recorded as Noether at some point in Emmy's family tree and this is therefore the legally correct spelling.} theorem binds each symmetry to a conserved current. There exist many different kinds of symmetries, \emph{discrete} and \emph{continuous}, \emph{global} and \emph{local}, and \emph{external} and \emph{internal}. External symmetries are symmetries under changes of reference frame or more general space-time transformations, while internal symmetries are not related with the environment but rather with internal degrees of freedom like spin or a phase in the function that describes the system. Global symmetries are the ones that emerge under trasformations that are independent on space-time coordinates, as opposed to local or \emph{gauge} transformations that depend on the point in space and time. Finally, continuous symmetries depend on parameters that may vary smoothly in some interval while the parameters of discrete symmetries are bound to countable set, whether they are finite or infinite. Some  of the most common examples are:
+        Symmetries are fundamental both in Classical and in Quantum Field Theory as Noether's\footnote{One may be tempted to write \emph{N\"other} instead of \emph{Noether}, however the latter spelling is the correct one. This surname was allegedly wrongfully recorded as Noether at some point in Emmy's family tree and this is therefore the legally correct spelling.} theorem binds each symmetry to a conserved current. There exist many different kinds of symmetries, \emph{discrete} and \emph{continuous}, \emph{global} and \emph{local}, and \emph{external} and \emph{internal}.
+        External symmetries are symmetries under changes of reference frame or more general space-time transformations, while internal symmetries are not related with the environment but rather with internal degrees of freedom like spin or a phase in the function that describes the system.
+        Global symmetries are the ones that emerge under trasformations that are independent on space-time coordinates, as opposed to local or \emph{gauge} transformations that depend on the point in space and time.
+        Finally, continuous symmetries depend on parameters that may vary smoothly in some interval while the parameters of discrete symmetries are bound to countable set, whether they are finite or infinite.
+        Some  of the most common examples are:
         \begin{enumerate}[label=\mybullet]
             \item \emph{Lorentz transformations} are continuous, global, external transformations;
             \item \emph{General coordinate transformations} from General Relativity are continuous, local, external transformations;
@@ -87,7 +102,8 @@
             \item \emph{Charge conjugation} is a discrete, global, internal transformation.
         \end{enumerate}
 
-        We shall now recast Noether's theorem in powerful and general form, in the language of Field Theory. The theorem states as follows.
+        We shall now recast Noether's theorem in powerful and general form, in the language of Field Theory.
+        The theorem states as follows.
 
         \vspace{\baselineskip}
         {
@@ -109,14 +125,16 @@
             \pdv{\tJ{^0}}{t} + \div{\vb{J}} = 0
             \mycomma
         \end{equation*}
-        where $\vb{J}$ is the spatial component of the $4$-current $\tJ{^\mu} = \pqty{\tJ{^0}, \vb{J}}$. By integrating both sides of the equation over a finite volume $\Omega \subseteq \bbR^3$, we see the volume integral of the divergence of the vector field $\vb{J}$, which may be translated to the flux of the field itself through the boundary $\partial\Omega$ of the region due to Gauss' theorem:
+        where $\vb{J}$ is the spatial component of the $4$-current $\tJ{^\mu} = \pqty{\tJ{^0}, \vb{J}}$.
+        By integrating both sides of the equation over a finite volume $\Omega \subseteq \bbR^3$, we see the volume integral of the divergence of the vector field $\vb{J}$, which may be translated to the flux of the field itself through the boundary $\partial\Omega$ of the region due to Gauss' theorem:
         \begin{align*}
-            \int\nolimits_{\Omega} \pdv{\tJ{^0}}{t} \dd[3]{\vb{r}}
+            \int\nolimits_{\Omega} \pdv{\tJ{^0}}{t} \dd[3]{\vb{x}}
             &= \int\nolimits_{\Omega} \div{\vb{J}} \dd[3]{\vb{x}} \\
             &= \oint\nolimits_{\partial\Omega} {\vb{J}}\dotproduct\vu{n} \dd{\sigma}
             \myperiod
         \end{align*}
-        \tJ{^\mu} must be a regular function of the field, therefore, if we assume that the field and all of its functions vanish at infinity, as we usually do with real systems that cannot hold infinite energy, we see that by taking the limit as $\Omega\to\bbR^3$, the flux goes to zero. Since \tJ{^\mu} is regular, we may as well bring the derivative out of the integral, obtaining
+        \tJ{^\mu} must be a regular function of the field, therefore, if we assume that the field and all of its functions vanish at infinity, as we usually do with real systems that cannot hold infinite energy, we see that by taking the limit as $\Omega\to\bbR^3$, the flux goes to zero.
+        Since \tJ{^\mu} is regular, we may as well bring the derivative out of the integral, obtaining
         \begin{equation*}
             \dv{t} \int\nolimits_{\bbR^3} \tJ{^0} \dd[3]{\vb{x}}
             = \oint\nolimits_{\partial\bbR^3} \vb{J}\dotproduct\vu{n} \dd{\sigma}
@@ -147,21 +165,173 @@
             &= \pqty{\pdv{\msL}{\phi_i} - \tpdv{_\mu}\pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}}} \var{\phi_i} + \tpdv{_\mu}\pqty{\pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i}}
             \mycomma
         \end{align*}
-        where we exploited the usual trick of integrating by part. We see that when we evaluate $\var{\msL}$ on the trajectories $\phi_i\pqty{x}$ that satisfy the Euler--Lagrange equations, the first term of the sum simplifies to zero, hence
-        \begin{equation*}
-            \var{\msL} = \pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i}
+        where we exploited the usual trick of integrating by part.
+        We see that when we evaluate $\var{\msL}$ on the trajectories $\phi_i\pqty{x}$ that satisfy the Euler--Lagrange equations, the first term of the sum simplifies to zero, hence
+        \begin{equation}
+            \label{eq:noether-dL-1}
+            \var{\msL} = \tpdv{_\mu}\pqty{\pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i}}
             \myperiod
-        \end{equation*}
+        \end{equation}
         It is now time to exploit the hypothesis that the transformarion $\phi_i \to \phi_i'$ is a simmetry for the actions \mcS.
-        
-        moreover the second term of the sum may be interpreted as the $4$-divergence of a function $\tK{^\mu}$ defined as
+        This is expressed mathematically by requiring that the Lagrangian transforms as follows:
         \begin{equation*}
-            \tK{^\mu} = \pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i}
+                \msL \to \msL' = \msL + \tpdv{_\mu}\tensor{K}{^\mu}
+                \mycomma
+        \end{equation*}
+        in fact
+        \begin{align*}
+                \mcS' &= \int\nolimits_\Omega \msL' \dd[4]{x} \\
+                &= \int\nolimits_\Omega \pqty{\msL + \tpdv{_\mu}\tK{^\mu}} \dd[4]{x} \\
+                &= \mcS + \oint\nolimits_{\partial\Omega} \tK{^\mu} \dd{\tensor{\sigma}{_\mu}}
+                \mycomma
+        \end{align*}
+        where the second term vanishes under the assumption that all functions of the fields vanish at infinity:
+        \begin{equation}
+            \label{eq:noether-dL-2}
+            \mcS' = \mcS + \oint\nolimits_{\partial R^4} \tK{^\mu} \dd{\tensor{\sigma}{_\mu}}
+            = \mcS
+            \myperiod
+        \end{equation}
+        This means that since the action remains the same under the transformation, the two Lagrangians $\msL$ and $\msL'$ describe the same dynamics.
+        
+        From \eqref{eq:noether-dL-2} we get $\var{\msL} = \tpdv{_\mu}\tK{^\mu}$ and from a direct confrontation with \eqref{eq:noether-dL-1} follows that
+        \begin{equation*}
+            \tpdv{_\mu} \tK{^\mu} = \tpdv{_\mu}\pqty{\pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i}}
             \mycomma
         \end{equation*}
-        therefore
+        implying
         \begin{equation*}
-            \var{\msL} = \tpdv{_\mu}\tK{^\mu}
+            \label{eq:noether-current-conserved}
+            \tpdv{_\mu}\pqty{\pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i} - \tK{^\mu}} = 0
             \myperiod
         \end{equation*}
-        We may now evaluate
+        The quantity in parentheses is the desired conserved $4$-vector
+        \begin{align}
+            \label{eq:noether-current}
+            \tJ{^\mu} &= \pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i} - \tK{^\mu} 
+            \mycomma \\
+            \label{eq:noether-continuity}
+            \tpdv{_\mu}\tJ{^\mu} &= 0
+            \myperiod
+        \end{align}
+        \qed
+
+        In the cases where $\var{\msL} = 0$ we say the symmetry is \emph{exact}.
+        In such cases the $4$-current takes the simpler expression
+        \begin{equation}
+            \label{eq:noether-current-exact}
+            \tJ{^\mu} = \pdv{\msL}{\pqty{\tpdv{_\mu}\phi_i}} \var{\phi_i}
+            \myperiod
+        \end{equation}
+        
+    \section{Energy--momentum tensor}
+        We now look in more detail at the $4$-current generated by the active transformation tied to the translation $x \to x' = x - \varepsilon$.
+        The active transformation is obtained by imposing that the field transforms as
+        \begin{equation}
+            \label{eq:active-transform}
+            \phi \to \phi'\colon \quad \phi'\pqty*{x'} = \phi\pqty{x}
+            \myperiod
+        \end{equation}
+        % TODO: mettere grafico che spiega cosa il c***o è la trasformazione attiva
+        It can be easily verified that the definition
+        \begin{equation}
+            \label{eq:active-transform-definition}
+            \phi'\pqty{x} = \phi\pqty{x + \varepsilon}
+        \end{equation}
+        satisfies \eqref{eq:active-transform} as 
+        \begin{equation*}
+            \phi'\pqty*{x'} = \phi\pqty*{x' + \varepsilon} = \phi\pqty{x - \varepsilon + \varepsilon} = \phi\pqty{x}
+        \end{equation*}
+
+        In order to evaluate the $4$-current we need to first evaluate $\var{\phi}$ and $\var{\msL}$.
+        Since $\msL$ is ultimately a smooth function of $x$ through the fields, it is enough to understand how any smooth function $f\pqty{x}$ transforms under a translation, which is quite easy under the condition $\varepsilon \to 0$:
+        \begin{align*}
+            \var{f\pqty{x}} &= f'\pqty{x} - f\pqty{x} \\
+            &= f\pqty{x + \varepsilon} - f\pqty{x} \\
+            &= f\pqty{x} + \tveps{^\mu} \tpdv{_\mu}f\pqty{x} - f\pqty{x} \\
+            &= \tveps{^\mu} \tpdv{_\mu}f\pqty{x}
+            \mycomma
+        \end{align*}
+        where $\tveps{^\mu}$ are the four components of the translation $4$-vector $\varepsilon$.
+        Consequently $\var{\phi\pqty{x}} = \tveps{^\mu} \tpdv{_\mu} \phi\pqty{x}$ and $\var{\msL\pqty{x}} = \tveps{^\mu} \tpdv{_\mu} \msL\pqty{x}$, which implies $\tK{^\mu} = \tveps{^\mu} \msL$.
+        In the case of multiple fields $\phi_i$, the current is given by
+        \begin{align*}
+            \tJ{^\mu} &= \pdv{\msL}{\pqty*{\tpdv{_\mu}\phi_i}} \var{\phi_i} - \tK{^\mu} \\
+            &= \pdv{\msL}{\pqty*{\tpdv{_\mu}\phi_i}} \tveps{^\nu} \tpdv{_\nu}\phi_i - \tveps{^\mu}\msL \\
+            &= \pqty{\pdv{\msL}{\pqty*{\tpdv{_\mu}\phi_i}} \tpdv{_\nu}\phi_i - \tensor{\delta}{^\mu_\nu}\msL} \tveps{^\nu}
+            \myperiod
+        \end{align*}
+        Since this holds for any $\varepsilon$, it must hold in particular for each component $\tveps{^\nu}$, implying that there are in fact four independent conserved currents
+        \begin{equation*}
+            \tJ{^\mu_{\pqty{\nu}}} = \pdv{\msL}{\pqty*{\tpdv{_\mu}\phi_i}} \tpdv{_\nu}\phi_i - \tensor{\delta}{^\mu_\nu}\msL
+            \myperiod
+        \end{equation*}
+        We shall therefore define the \emph{energy--momentum tensor} as $\tensor{T}{^\mu^\nu} = \tensor{\eta}{^\nu^\rho} \tJ{^\mu _{\pqty{\rho}}}$:
+        \begin{align}
+            \label{eq:energy-momentum-tensor-definition}
+            \tT{^\mu^\nu} &= \pdv{\msL}{\pqty*{\tpdv{_\mu}\phi_i}} \tpdv{^\nu}\phi_i - \tensor{\eta}{^\mu^\nu}\msL
+            \mycomma \\
+            \label{eq:energy-momentum-continuity}
+            \tpdv{_\mu}\tT{^\mu^\nu} &= 0 
+            \mycomma
+        \end{align}
+        for which the continuity equation \eqref{eq:energy-momentum-continuity} comes naturally from \eqref{eq:noether-continuity}.
+
+        The four conserved charges corresponding to each current
+        \begin{equation*}
+            \tensor{Q}{_\nu} = \int \tJ{^0_{\pqty{\nu}}} \dd[3]{\vb{x}}
+        \end{equation*}
+        are in fact the components of the $4$-momentum
+        \begin{equation*}
+            \tensor{P}{^\mu} = \int \tT{^0^\nu} \dd[3]{\vb{x}}
+            \myperiod
+        \end{equation*}
+        We can in fact check that $\tensor{P}{^0}$ is the energy and $\tensor{P}{^i}$ the $3$-momentum associated to the field $\tensor{\phi}{_a}$:
+        \begin{align*}
+            \tensor{P}{^0} &= \int \tT{^0^0} \dd[3]{\vb{x}} \\
+            &= \int \pqty{\pdv{\msL}{\pqty{\tpdv{_0}\phi_a}}\tpdv{^0}\phi_a - \tminkm{^0^0} \msL} \dd[3]{\vb{x}} \\ 
+            &= \int \pqty{\tensor{\pi}{^a}\tensor{\dot{\phi}}{_a} - \msL} \dd[3]{\vb{x}} \\ 
+            &= \int \msH \dd[3]{\vb{x}} = \mcH
+            \mycomma
+        \end{align*}
+        \begin{align*}
+            \tensor{P}{^i} &= \int \tT{^0^i} \dd[3]{\vb{x}} \\
+            &= \int \pqty{\pdv{\msL}{\pqty{\tpdv{_0}\phi_a}}\tpdv{^i}\phi_a - \tminkm{^0^i} \msL} \dd[3]{\vb{x}} \\ 
+            &= -\int \tensor{\pi}{^a}\tpdv{_i}\tensor{\phi}{_a} \dd[3]{\vb{x}}
+            \myperiod
+        \end{align*}
+        From the Noether theorem it follows that
+        \begin{equation*}
+            \dv{\mcH}{t} = \dv{\tensor{P}{^i}}{t} = 0
+            \myperiod
+        \end{equation*}
+
+    \section{Applications to Electromagnetism}
+        We now apply the tools we just developed to the classical Field Theory of Electromagnetism.
+        We start by considering the $4$-potential $\tA{_\mu} = \pqty{\tA{^0}, \vb{A}}$.
+        Both the electric and magnetic fields can be expressed in terms of $A$:
+        \begin{align*}
+            \vb{E} &= - \grad{\tA{^0}} - \pdv{\vb{A}}{t}
+            \mycomma \\
+            \vb{B} &= \curl{\vb{A}}
+            \mycomma
+        \end{align*}
+        naturally yielding two of the four Maxwell's equations:
+        \begin{align*}
+            \div{\vb{B}} &= 0
+            \mycomma \\
+            \curl{\vb{E}} &= - \pdv{\vb{B}}{t}
+            \myperiod
+        \end{align*}
+
+        In the tensorial formalism, the same relations read:
+
+
+        % The lagrangian density function of Electromagnetism is a function of the $4$-potential $\tA{_\mu}$ and its derivatives $\tpdv{_\mu}\tA{_\nu}$:
+        % \begin{equation}
+        %     \msL = -\frac{1}{2} 
+        % \end{equation}
+        % short intro, lagrangian
+        \subsection{Euler--Lagrange equations and Maxwell's electromagnetic tensor}
+        \subsection{Energy--momentum tensor for Electromagnetism}
+        \subsection{Belifante--Rosenfeld symmetrization}
